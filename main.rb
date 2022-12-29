@@ -1,10 +1,10 @@
-# frozen_string_literal: true
+
 
 require 'dotenv/load'
 require 'telegram/bot'
 
 # token = ENV['TOKEN']
-token = '5852461356:AAFzUSlr3Rnk8O2ETfcBGQ1NT7z_ZixsYCs'
+token = '5902537194:AAHSWemDTNAsHj3PThzd3r5r-u_WtnS40uM'
 
 HASH = {
   'б' => 'b', 'Б' => 'B',
@@ -35,7 +35,7 @@ HASH = {
   'у' => 'u', 'У' => 'U',
   'й' => 'j', 'Й' => 'J',
   'ь' => "'", 'Ь' => "'",
-  'щ' => 'šč', 'Щ' => 'Šč',
+  'щ' => 'šč', 'Щ' => 'ŠČ',
   'я' => 'ja', 'Я' => 'Ja',
   'ю' => 'ju', 'Ю' => 'Ju',
   'є' => 'je', 'Є' => 'Je',
@@ -59,7 +59,6 @@ def kyrylytsja_to_latynka(text)
         match = array_of_chars[index + 1].match(/[іеуао]/)
         if match
           aa = "ь#{match.string}"
-          pp aa
           array << HASH[aa]
           skip_next_element = true
           next
